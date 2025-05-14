@@ -1,10 +1,21 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "Synapse-Bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "ascii-table": "^0.0.9",
+    "axios": "^1.9.0",
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.5.0",
+    "i18next": "^25.1.2",
+    "i18next-fs-backend": "^2.6.0",
+    "luxon": "^3.6.1",
+    "node-cron": "^4.0.5"
+  }
 }
