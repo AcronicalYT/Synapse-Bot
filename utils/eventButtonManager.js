@@ -197,9 +197,11 @@ async function handleEventButtonInteraction(interaction, client, supabase) {
     } catch (error) {
         console.error('Error handling event button interaction:', error);
         if (!interaction.replied && !interaction.deferred) {
-            await interaction.reply({ content: 'An error occurred while processing your request.', ephemeral: true });
+            if (action == 'join') await interaction.reply({ content: `Failed to add you to the event, have you linked your bungie account using \`/linkbungie\`?`, ephemeral: true })
+            else await interaction.reply({ content: 'An error occurred while processing your request.', ephemeral: true });
         } else {
-            await interaction.editReply({ content: 'An error occurred while processing your request.', ephemeral: true });
+            if (action == 'join') await interaction.editReply({ content: `Failed to add you to the event, have you linked your bungie account using \`/linkbungie\`?`, ephemeral: true })
+            else await interaction.editReply({ content: 'An error occurred while processing your request.', ephemeral: true });
         }
     }
 }
