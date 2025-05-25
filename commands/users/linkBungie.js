@@ -15,7 +15,7 @@ module.exports = {
                 .setDescription('Your preferred language (e.g., en, fr, de). Defaults to en.')
                 .setRequired(false)),
     async execute(interaction) {
-        await interaction.deferReply();
+        await interaction.deferReply({ ephemeral: true });
 
         const fullBungieName = interaction.options.getString('bungie_name');
         const discordUserId = interaction.user.id;
