@@ -104,8 +104,7 @@ module.exports = {
                 .addFields({ name: 'Bungie Membership ID', value: bungieUserData.membershipId, inline: true })
                 .setTimestamp();
 
-            await interaction.editReply({ embeds: [successEmbed] });
-
+            await interaction.editReply({ embeds: [successEmbed], ephemeral: true });
         } catch (error) {
             console.error('Error in /linkbungie command:', error);
             const systemErrorEmbed = new EmbedBuilder()
